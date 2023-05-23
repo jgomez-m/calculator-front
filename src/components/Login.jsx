@@ -50,13 +50,13 @@ const Login = () => {
       <h2>Login Page</h2>
       <form>
         <div className="mb-3">
-          <label htmlFor="username" className="form-label">Username:</label>
+          <label htmlFor="userName" className="form-label">Username:</label>
           <input
             type="text"
-            id="username"
+            id="userName"
             className="form-control"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={userName}
+            onChange={handleUsernameChange}
           />
         </div>
         <div className="mb-3">
@@ -66,7 +66,7 @@ const Login = () => {
             id="password"
             className="form-control"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handlePasswordChange}
           />
         </div>
         <button type="button" className="btn btn-primary" onClick={handleLogin}>
