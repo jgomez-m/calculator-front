@@ -41,3 +41,8 @@ This will start the application and launch it in your default web browser. If it
 
 - Login into the application, then you need to create a New Operation and finally you coul view the list of operations in your account. 
 - There are a list of operations like: ADDITION, SUBSTRACTION, MULTIPLICATION, DIVISION, SQUARE_ROOT AND RANDOM_STRING.
+
+## Demo
+
+<img width="1272" alt="Screenshot 2023-05-23 at 14 54 02" src="https://github.com/jgomez-m/calculator-front/assets/16678199/20c76b00-82d0-4e16-8bc9-5bed673c70ce">
+
