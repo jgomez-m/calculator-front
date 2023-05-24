@@ -19,7 +19,7 @@ const UserRecords = () => {
       })
       .then((response) => {
         if (response.ok) {
-          console.log("RESPONSE: OK")
+          //console.log("RESPONSE: OK")
           return response.json();
     
         } else {
@@ -39,7 +39,7 @@ const UserRecords = () => {
     }
     getRecords();
 
-  }, []);
+  }, [records, userName]);
 
   const handleDeleteRecord = (recordId) => {
     // Send delete record request to the server using RESTful API
@@ -53,9 +53,13 @@ const UserRecords = () => {
         .then((response) => {
           if (response.ok) {
             console.log("Record deleted: " + recordId)
+            return response.json()
           } else {
             console.error('Error creating record:', response);
           }
+        })
+        .then((data) => {
+          console.log("Object Removed: " + data);
         })
         .catch((error) => {
           console.error('Error creating record:', error);
