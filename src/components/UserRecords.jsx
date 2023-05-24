@@ -39,10 +39,28 @@ const UserRecords = () => {
     }
     getRecords();
 
-  }, [records]);
+  }, []);
 
   const handleDeleteRecord = (recordId) => {
     // Send delete record request to the server using RESTful API
+    if(recordId !== undefined) {
+      fetch('http://localhost:8080/records/' + recordId, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+        .then((response) => {
+          if (response.ok) {
+            console.log("Record deleted: " + recordId)
+          } else {
+            console.error('Error creating record:', response);
+          }
+        })
+        .catch((error) => {
+          console.error('Error creating record:', error);
+        });
+    }
   };
 
   const filteredRecords = records.filter((record) =>

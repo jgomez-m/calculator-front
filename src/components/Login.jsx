@@ -4,7 +4,7 @@ import { UserContext } from '../context/UserContext';
 
 
 const Login = () => {
-  const [userName, setUsername] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
   const { setUsername: setContextUsername } = useContext(UserContext);
@@ -26,11 +26,11 @@ const Login = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ userName, password }),
+      body: JSON.stringify({ username, password }),
     });
 
     if(response.ok) {
-      setContextUsername(userName)
+      setContextUsername(username)
       history.push("/new-operation")
     }
 
@@ -50,12 +50,12 @@ const Login = () => {
       <h2>Login Page</h2>
       <form>
         <div className="mb-3">
-          <label htmlFor="userName" className="form-label">Username:</label>
+          <label htmlFor="username" className="form-label">Username:</label>
           <input
             type="text"
-            id="userName"
+            id="username"
             className="form-control"
-            value={userName}
+            value={username}
             onChange={handleUsernameChange}
           />
         </div>
